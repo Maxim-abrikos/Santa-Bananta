@@ -16,21 +16,21 @@ public class Activist : ICharacter
             Stats[i] = 5;
         SetNames();
         //this.Names = new string[5];
-        //Names[0] = "Фонд";
-        //Names[1] = "Активисты";
-        //Names[2] = "Государство";
-        //Names[3] = "Компании";
-        //Names[4] = "Народ";
+        //Names[0] = "Р¤РѕРЅРґ";
+        //Names[1] = "РђРєС‚РёРІРёСЃС‚С‹";
+        //Names[2] = "Р“РѕСЃСѓРґР°СЂСЃС‚РІРѕ";
+        //Names[3] = "РљРѕРјРїР°РЅРёРё";
+        //Names[4] = "РќР°СЂРѕРґ";
     }
 
     public void SetNames()
     {
         this.Names = new string[5];
-        Names[0] = "Фонд";
-        Names[1] = "Активисты";
-        Names[2] = "Государство";
-        Names[3] = "Компании";
-        Names[4] = "Народ";
+        Names[0] = "Р¤РѕРЅРґ";
+        Names[1] = "РђРєС‚РёРІРёСЃС‚С‹";
+        Names[2] = "Р“РѕСЃСѓРґР°СЂСЃС‚РІРѕ";
+        Names[3] = "РљРѕРјРїР°РЅРёРё";
+        Names[4] = "РќР°СЂРѕРґ";
     }
 
     public void AddImportant(string Imp, int N)

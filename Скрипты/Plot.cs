@@ -54,7 +54,7 @@ public class Plot : MonoBehaviour
 
     private int Character;
 
-    public void SelectCharacter(int N) //Выбор персонажа
+    public void SelectCharacter(int N) //Р’С‹Р±РѕСЂ РїРµСЂСЃРѕРЅР°Р¶Р°
     {
         Dude = Dudes[N];
         Dude.Settings();
@@ -63,15 +63,15 @@ public class Plot : MonoBehaviour
         Play();
     }
 
-    internal bool LoadData() //Загрузка прогресса
+    internal bool LoadData() //Р—Р°РіСЂСѓР·РєР° РїСЂРѕРіСЂРµСЃСЃР°
     {
-        if (PlayerPrefs.HasKey("Ситуации") && (PlayerPrefs.HasKey("Характеристики")) && (PlayerPrefs.HasKey("События")) && (PlayerPrefs.HasKey("Уровень")) && (PlayerPrefs.HasKey("Персонаж"))) 
+        if (PlayerPrefs.HasKey("РЎРёС‚СѓР°С†РёРё") && (PlayerPrefs.HasKey("РҐР°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё")) && (PlayerPrefs.HasKey("РЎРѕР±С‹С‚РёСЏ")) && (PlayerPrefs.HasKey("РЈСЂРѕРІРµРЅСЊ")) && (PlayerPrefs.HasKey("РџРµСЂСЃРѕРЅР°Р¶"))) 
         {
-            Dude = Dudes[PlayerPrefs.GetInt("Персонаж")];
-            Dude.Stats = (int[])JsonConvert.DeserializeObject(PlayerPrefs.GetString("Характеристики"));
-            Dude.SetImportant((List<string>)(JsonConvert.DeserializeObject(PlayerPrefs.GetString("События"))));
-            Situations.AddRange((List<Situation>)(JsonConvert.DeserializeObject(PlayerPrefs.GetString("Ситуации"))));
-            CurrentNumber = PlayerPrefs.GetInt("Уровень");
+            Dude = Dudes[PlayerPrefs.GetInt("РџРµСЂСЃРѕРЅР°Р¶")];
+            Dude.Stats = (int[])JsonConvert.DeserializeObject(PlayerPrefs.GetString("РҐР°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё"));
+            Dude.SetImportant((List<string>)(JsonConvert.DeserializeObject(PlayerPrefs.GetString("РЎРѕР±С‹С‚РёСЏ"))));
+            Situations.AddRange((List<Situation>)(JsonConvert.DeserializeObject(PlayerPrefs.GetString("РЎРёС‚СѓР°С†РёРё"))));
+            CurrentNumber = PlayerPrefs.GetInt("РЈСЂРѕРІРµРЅСЊ");
             return true;
         }
         else
@@ -102,7 +102,7 @@ public class Plot : MonoBehaviour
         
     }
 
-    public void Play() //Движение по сюжету
+    public void Play() //Р”РІРёР¶РµРЅРёРµ РїРѕ СЃСЋР¶РµС‚Сѓ
     {
         foreach (var button in ChoiseButtons)
             button.gameObject.SetActive(false);
@@ -122,12 +122,12 @@ public class Plot : MonoBehaviour
         }
         else 
         {
-            //Тут будет выход на концовку
+            //РўСѓС‚ Р±СѓРґРµС‚ РІС‹С…РѕРґ РЅР° РєРѕРЅС†РѕРІРєСѓ
         }
         return;
     }
 
-    public List<Situation> AddSituations() //Добавление ситуаций из нового сюжетного витка
+    public List<Situation> AddSituations() //Р”РѕР±Р°РІР»РµРЅРёРµ СЃРёС‚СѓР°С†РёР№ РёР· РЅРѕРІРѕРіРѕ СЃСЋР¶РµС‚РЅРѕРіРѕ РІРёС‚РєР°
     {
         (int, int, int, int, int) Omega;
         List<Situation> S = new List<Situation>();
@@ -135,7 +135,7 @@ public class Plot : MonoBehaviour
             S = CurrentPlot[CurrentNumber].Situations;
         else
         {
-            Debug.Log("Всё");
+            Debug.Log("Р’СЃС‘");
             return new List<Situation>();
         }
         List<Situation> S1 = new List<Situation>();
@@ -162,7 +162,7 @@ public class Plot : MonoBehaviour
 
     private RectTransform rectTransform, Imagetransform, NSRT, PSRT, SSB;
     Image TBImage;
-    IEnumerator NextSentence() //Переход к следующей ситуации или к следующему тексту
+    IEnumerator NextSentence() //РџРµСЂРµС…РѕРґ Рє СЃР»РµРґСѓСЋС‰РµР№ СЃРёС‚СѓР°С†РёРё РёР»Рё Рє СЃР»РµРґСѓСЋС‰РµРјСѓ С‚РµРєСЃС‚Сѓ
     {
         (int, int) Sizes = Dimension.SizesOfTextBox[CurrentSituation.CodeWord];
         (int, int) Coordinates = Dimension.CoordinatesOfTextBox[CurrentSituation.CodeWord];
@@ -240,7 +240,7 @@ public class Plot : MonoBehaviour
         yield break;
     }
 
-    void PreviousSentence() //Возврат к предыдущему тексту
+    void PreviousSentence() //Р’РѕР·РІСЂР°С‚ Рє РїСЂРµРґС‹РґСѓС‰РµРјСѓ С‚РµРєСЃС‚Сѓ
     {
         SentenceCounter-= StepBackward;
         StepBackward = 1;
@@ -263,7 +263,7 @@ public class Plot : MonoBehaviour
         return;
     }
 
-    IEnumerator DisplayChooses() //Отображение возможных выборов
+    IEnumerator DisplayChooses() //РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РІРѕР·РјРѕР¶РЅС‹С… РІС‹Р±РѕСЂРѕРІ
     {
         TextBox.text = Sentence[Sentence.Count-1];
         SentenceCounter = Sentence.Count;
@@ -293,7 +293,7 @@ public class Plot : MonoBehaviour
     }
 
 
-    IEnumerator Choose(int N) //Выбор действия
+    IEnumerator Choose(int N) //Р’С‹Р±РѕСЂ РґРµР№СЃС‚РІРёСЏ
     {
         SentenceCounter = 0;
         Dude.ChangeStats(CurrentSituation.GetCons(N));
@@ -307,7 +307,7 @@ public class Plot : MonoBehaviour
         yield break;
     }
 
-    IEnumerator ShowAfterWords(int N) //Отображение последствий выбора
+    IEnumerator ShowAfterWords(int N) //РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РїРѕСЃР»РµРґСЃС‚РІРёР№ РІС‹Р±РѕСЂР°
     {
         PrevSitButton.enabled = false;
         PrevSitButton.gameObject.SetActive(false);
@@ -322,18 +322,18 @@ public class Plot : MonoBehaviour
         yield break;
     }
 
-    private void SaveData() //Сохранение прогресса
+    private void SaveData() //РЎРѕС…СЂР°РЅРµРЅРёРµ РїСЂРѕРіСЂРµСЃСЃР°
     {
         List<Situation> SaveSits = new List<Situation>();
         for (int i = Counter; i < Situations.Count; i++)
         {
             SaveSits.Add(Situations[i]);
         }
-        PlayerPrefs.SetString("Ситуации", JsonConvert.SerializeObject(SaveSits));
-        PlayerPrefs.SetString("Характеристики", JsonConvert.SerializeObject(Dude.Stats));
-        PlayerPrefs.SetString("События", JsonConvert.SerializeObject(Dude.GetImportant()));
-        PlayerPrefs.SetInt("Уровень", CurrentNumber);
-        PlayerPrefs.SetInt("Персонаж", Character);
+        PlayerPrefs.SetString("РЎРёС‚СѓР°С†РёРё", JsonConvert.SerializeObject(SaveSits));
+        PlayerPrefs.SetString("РҐР°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё", JsonConvert.SerializeObject(Dude.Stats));
+        PlayerPrefs.SetString("РЎРѕР±С‹С‚РёСЏ", JsonConvert.SerializeObject(Dude.GetImportant()));
+        PlayerPrefs.SetInt("РЈСЂРѕРІРµРЅСЊ", CurrentNumber);
+        PlayerPrefs.SetInt("РџРµСЂСЃРѕРЅР°Р¶", Character);
     }
 
     IEnumerator ShowStats()
@@ -342,7 +342,7 @@ public class Plot : MonoBehaviour
         yield break;
     }
 
-    //public void OnDestroy() //Ещё дойду до этого
+    //public void OnDestroy() //Р•С‰С‘ РґРѕР№РґСѓ РґРѕ СЌС‚РѕРіРѕ
     //{
     //    SaveData();
     //}

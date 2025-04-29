@@ -8,31 +8,31 @@ using UnityEngine;
 public class Situation
 {
     [SerializeField]
-    internal string Description;//описание
+    internal string Description;//РѕРїРёСЃР°РЅРёРµ
     [SerializeField]
-    internal string Condition;//условия для того, чтобы ситуация произошла
+    internal string Condition;//СѓСЃР»РѕРІРёСЏ РґР»СЏ С‚РѕРіРѕ, С‡С‚РѕР±С‹ СЃРёС‚СѓР°С†РёСЏ РїСЂРѕРёР·РѕС€Р»Р°
     [SerializeField]
-    internal int ReferNumber;//не очень уникальный номер
-    [SerializeField, Tooltip("Характеристики для каждого выбора, заполнять через точку без пробелов")]
-    internal List<string> Conditions = new List<string>(); //условия выборов
-    [SerializeField, Tooltip("Последствия каждого выбора, заполнять через точку без пробелов. Указывать все 5 характеристик, даже если значение =0")]
-    internal List<string> Cons = new List<string>();//последствия выборов
+    internal int ReferNumber;//РЅРµ РѕС‡РµРЅСЊ СѓРЅРёРєР°Р»СЊРЅС‹Р№ РЅРѕРјРµСЂ
+    [SerializeField, Tooltip("РҐР°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё РґР»СЏ РєР°Р¶РґРѕРіРѕ РІС‹Р±РѕСЂР°, Р·Р°РїРѕР»РЅСЏС‚СЊ С‡РµСЂРµР· С‚РѕС‡РєСѓ Р±РµР· РїСЂРѕР±РµР»РѕРІ")]
+    internal List<string> Conditions = new List<string>(); //СѓСЃР»РѕРІРёСЏ РІС‹Р±РѕСЂРѕРІ
+    [SerializeField, Tooltip("РџРѕСЃР»РµРґСЃС‚РІРёСЏ РєР°Р¶РґРѕРіРѕ РІС‹Р±РѕСЂР°, Р·Р°РїРѕР»РЅСЏС‚СЊ С‡РµСЂРµР· С‚РѕС‡РєСѓ Р±РµР· РїСЂРѕР±РµР»РѕРІ. РЈРєР°Р·С‹РІР°С‚СЊ РІСЃРµ 5 С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє, РґР°Р¶Рµ РµСЃР»Рё Р·РЅР°С‡РµРЅРёРµ =0")]
+    internal List<string> Cons = new List<string>();//РїРѕСЃР»РµРґСЃС‚РІРёСЏ РІС‹Р±РѕСЂРѕРІ
 
     [SerializeField]
-    internal List<string> TextOfChoises = new List<string>(); //тексты выборов
+    internal List<string> TextOfChoises = new List<string>(); //С‚РµРєСЃС‚С‹ РІС‹Р±РѕСЂРѕРІ
 
     [SerializeField]
-    internal List<string> AfterWords = new List<string>(); //Послесловие с выводом изменений
+    internal List<string> AfterWords = new List<string>(); //РџРѕСЃР»РµСЃР»РѕРІРёРµ СЃ РІС‹РІРѕРґРѕРј РёР·РјРµРЅРµРЅРёР№
 
     //[SerializeField]
-    //internal List<string> BeforeWords = new List<string>();//Предисловие в основном для обязательных сюжетных ситуаций
+    //internal List<string> BeforeWords = new List<string>();//РџСЂРµРґРёСЃР»РѕРІРёРµ РІ РѕСЃРЅРѕРІРЅРѕРј РґР»СЏ РѕР±СЏР·Р°С‚РµР»СЊРЅС‹С… СЃСЋР¶РµС‚РЅС‹С… СЃРёС‚СѓР°С†РёР№
 
-    [SerializeField, Tooltip("Список необходимых СОБЫТИЙ, чтобы эта ситцауия произошла, заполнять через запятую без пробелов")]
-    internal string SpecialConditions;//Список особых условий (ключевые события) для проишествия ситуации
-    [SerializeField, Tooltip("Особые последствия выборов (События), заполнять через запятую без пробелов, если последствия есть не у всех выборов, то на их месте ставить прочерк (-)")]
-    internal string SpecialCons;//особые последствия выборов
-    [SerializeField, Tooltip("Списки необходимых СОБЫТИЙ для каждого выбора, заполнять через запятую без пробелов")]
-    internal List<string> SpecialConditionsForChoises = new List<string>();//Особые условия для каждого выбора
+    [SerializeField, Tooltip("РЎРїРёСЃРѕРє РЅРµРѕР±С…РѕРґРёРјС‹С… РЎРћР‘Р«РўРР™, С‡С‚РѕР±С‹ СЌС‚Р° СЃРёС‚С†Р°СѓРёСЏ РїСЂРѕРёР·РѕС€Р»Р°, Р·Р°РїРѕР»РЅСЏС‚СЊ С‡РµСЂРµР· Р·Р°РїСЏС‚СѓСЋ Р±РµР· РїСЂРѕР±РµР»РѕРІ")]
+    internal string SpecialConditions;//РЎРїРёСЃРѕРє РѕСЃРѕР±С‹С… СѓСЃР»РѕРІРёР№ (РєР»СЋС‡РµРІС‹Рµ СЃРѕР±С‹С‚РёСЏ) РґР»СЏ РїСЂРѕРёС€РµСЃС‚РІРёСЏ СЃРёС‚СѓР°С†РёРё
+    [SerializeField, Tooltip("РћСЃРѕР±С‹Рµ РїРѕСЃР»РµРґСЃС‚РІРёСЏ РІС‹Р±РѕСЂРѕРІ (РЎРѕР±С‹С‚РёСЏ), Р·Р°РїРѕР»РЅСЏС‚СЊ С‡РµСЂРµР· Р·Р°РїСЏС‚СѓСЋ Р±РµР· РїСЂРѕР±РµР»РѕРІ, РµСЃР»Рё РїРѕСЃР»РµРґСЃС‚РІРёСЏ РµСЃС‚СЊ РЅРµ Сѓ РІСЃРµС… РІС‹Р±РѕСЂРѕРІ, С‚Рѕ РЅР° РёС… РјРµСЃС‚Рµ СЃС‚Р°РІРёС‚СЊ РїСЂРѕС‡РµСЂРє (-)")]
+    internal string SpecialCons;//РѕСЃРѕР±С‹Рµ РїРѕСЃР»РµРґСЃС‚РІРёСЏ РІС‹Р±РѕСЂРѕРІ
+    [SerializeField, Tooltip("РЎРїРёСЃРєРё РЅРµРѕР±С…РѕРґРёРјС‹С… РЎРћР‘Р«РўРР™ РґР»СЏ РєР°Р¶РґРѕРіРѕ РІС‹Р±РѕСЂР°, Р·Р°РїРѕР»РЅСЏС‚СЊ С‡РµСЂРµР· Р·Р°РїСЏС‚СѓСЋ Р±РµР· РїСЂРѕР±РµР»РѕРІ")]
+    internal List<string> SpecialConditionsForChoises = new List<string>();//РћСЃРѕР±С‹Рµ СѓСЃР»РѕРІРёСЏ РґР»СЏ РєР°Р¶РґРѕРіРѕ РІС‹Р±РѕСЂР°
 
     [SerializeReference]
     internal string CodeWord;

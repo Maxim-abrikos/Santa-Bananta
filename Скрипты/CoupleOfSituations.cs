@@ -7,5 +7,5 @@ public class CoupleOfSituations //:MonoBehaviour
 {
     [SerializeField]
     internal List<FewSituations> CoupSituations = new List<FewSituations>();
-    private enum Character_ {Полковник, Активист, Корпорат, Мэр};
+    private enum Character_ {РџРѕР»РєРѕРІРЅРёРє, РђРєС‚РёРІРёСЃС‚, РљРѕСЂРїРѕСЂР°С‚, РњСЌСЂ};
 }

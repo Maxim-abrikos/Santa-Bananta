@@ -14,7 +14,7 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        if (!plot.LoadData()) //если нет сохранений - новая игра
+        if (!plot.LoadData()) //РµСЃР»Рё РЅРµС‚ СЃРѕС…СЂР°РЅРµРЅРёР№ - РЅРѕРІР°СЏ РёРіСЂР°
         {
             Buttons[0].gameObject.SetActive(true);
             Buttons[1].gameObject.SetActive(true);

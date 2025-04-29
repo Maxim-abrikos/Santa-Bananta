@@ -15,21 +15,21 @@ public class Corporate : ICharacter
             Stats[i] = 5;
         SetNames();
         //this.Names = new string[5];
-        //Names[0] = "Капитал";
-        //Names[1] = "ЧВК";
-        //Names[2] = "Государство";
-        //Names[3] = "Компании";
-        //Names[4] = "Народ";
+        //Names[0] = "РљР°РїРёС‚Р°Р»";
+        //Names[1] = "Р§Р’Рљ";
+        //Names[2] = "Р“РѕСЃСѓРґР°СЂСЃС‚РІРѕ";
+        //Names[3] = "РљРѕРјРїР°РЅРёРё";
+        //Names[4] = "РќР°СЂРѕРґ";
     }
 
     public void SetNames()
     {
         this.Names = new string[5];
-        Names[0] = "Капитал";
-        Names[1] = "ЧВК";
-        Names[2] = "Государство";
-        Names[3] = "Компании";
-        Names[4] = "Народ";
+        Names[0] = "РљР°РїРёС‚Р°Р»";
+        Names[1] = "Р§Р’Рљ";
+        Names[2] = "Р“РѕСЃСѓРґР°СЂСЃС‚РІРѕ";
+        Names[3] = "РљРѕРјРїР°РЅРёРё";
+        Names[4] = "РќР°СЂРѕРґ";
     }
 
     public void AddImportant(string Imp, int N)
